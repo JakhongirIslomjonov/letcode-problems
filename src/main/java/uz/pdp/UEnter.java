@@ -1,5 +1,8 @@
 package uz.pdp;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class UEnter {
     public static void main(String[] args) {
         //1-
@@ -53,6 +56,56 @@ public class UEnter {
                 "∗ side2\n = " + area);
         System.out.println("The volume of the Triangular prism is volume = area * length = " + area *height);
 */
+        lottery();
 
+
+    }
+
+    private static void lottery() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int arrNum;
+        int numberCount = 0;
+        int[] arrRandomNumber = new int[6];
+        int[] arrUserEnterNumber = new int[6];
+        for (int i = 0; i < 6; i++) {
+            arrRandomNumber[i] = random.nextInt(1, 37);
+        }
+        System.out.print("random number :");
+        for (int arr : arrRandomNumber) {
+            System.out.print(arr + " ");
+        }
+        System.out.println("To win a prize, you need to enter 6 numbers between 1 and 36 (including 36)");
+        System.out.println("Enter the numbers one by one:");
+        for (int i = 0; i < arrUserEnterNumber.length; i++) {
+            arrNum = scanner.nextInt();
+            if (arrNum >= 1 && arrNum <= 36) {
+                arrUserEnterNumber[i] = arrNum;
+            } else {
+                System.out.println("Invalid Number please try enter number ");
+                i--;
+            }
+            if (arrRandomNumber[i] == arrUserEnterNumber[i]) {
+                numberCount++;
+            }
+        }
+        if (numberCount == 6) {
+            System.out.println("10000$");
+        } else if (numberCount == 5) {
+            System.out.println("5000$");
+        } else if (numberCount == 3) {
+            System.out.println("3000$");
+        } else {
+            System.out.println("fail becouse your  find number : " + numberCount);
+        }
+        System.out.print("random number :");
+        for (int arr : arrRandomNumber) {
+            System.out.print(arr + " ");
+        }
+        System.out.println();
+        System.out.print("random number : ");
+        for (int arr : arrUserEnterNumber) {
+            System.out.print(arr + " ");
+        }
     }
 }
