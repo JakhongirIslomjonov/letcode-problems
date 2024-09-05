@@ -56,55 +56,83 @@ public class UEnter {
                 "∗ side2\n = " + area);
         System.out.println("The volume of the Triangular prism is volume = area * length = " + area *height);
 */
-        lottery();
+//        lottery();
 
+//        extracted();
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("enter channel number :");
+        int channelNumber = scanner.nextInt();
+        if (channelNumber >= 1 && channelNumber <= 120) {
+            System.out.println("channel number -> " + channelNumber);
+        } else if (channelNumber < 1) {
+            channelNumber = -channelNumber % 120;
+            System.out.println("channel number -> " + channelNumber);
+        } else {
+            channelNumber = channelNumber % 120;
+            System.out.println("channel number -> " + channelNumber);
+        }
+
+    }
+
+    private static void extracted() {
+        Scanner scanner = new Scanner(System.in);
+        int[] arr = new int[3];
+        for (int i = 0; i < 3; i++) {
+            arr[i] = scanner.nextInt();
+            if ((i > 0) && (arr[i - 1] == 2)) {
+                arr[i] = 0;
+            }
+        }
+
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
     }
 
     private static void lottery() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        int arrNum;
-        int numberCount = 0;
-        int[] arrRandomNumber = new int[6];
-        int[] arrUserEnterNumber = new int[6];
+        int temp = 0;
+        int matches = 0;
+
+        int[] loterryNumbers = new int[6];
+        int[] userNumbers = new int[6];
+
         for (int i = 0; i < 6; i++) {
-            arrRandomNumber[i] = random.nextInt(1, 37);
-        }
-        System.out.print("random number :");
-        for (int arr : arrRandomNumber) {
-            System.out.print(arr + " ");
+            loterryNumbers[i] = random.nextInt(1, 37);
         }
         System.out.println("To win a prize, you need to enter 6 numbers between 1 and 36 (including 36)");
         System.out.println("Enter the numbers one by one:");
-        for (int i = 0; i < arrUserEnterNumber.length; i++) {
-            arrNum = scanner.nextInt();
-            if (arrNum >= 1 && arrNum <= 36) {
-                arrUserEnterNumber[i] = arrNum;
+        for (int i = 0; i < userNumbers.length; i++) {
+            temp = scanner.nextInt();
+            if (temp >= 1 && temp <= 36) {
+                userNumbers[i] = temp;
+                if (loterryNumbers[i] == userNumbers[i]) {
+                    matches++;
+                }
             } else {
                 System.out.println("Invalid Number please try enter number ");
                 i--;
             }
-            if (arrRandomNumber[i] == arrUserEnterNumber[i]) {
-                numberCount++;
-            }
+
         }
-        if (numberCount == 6) {
+        if (matches == 6) {
             System.out.println("10000$");
-        } else if (numberCount == 5) {
+        } else if (matches == 5) {
             System.out.println("5000$");
-        } else if (numberCount == 3) {
+        } else if (matches >= 3) {
             System.out.println("3000$");
         } else {
-            System.out.println("fail becouse your  find number : " + numberCount);
+            System.out.println("fail because your  find number : " + matches);
         }
         System.out.print("random number :");
-        for (int arr : arrRandomNumber) {
+        for (int arr : loterryNumbers) {
             System.out.print(arr + " ");
         }
         System.out.println();
-        System.out.print("random number : ");
-        for (int arr : arrUserEnterNumber) {
+        System.out.print("user enter number : ");
+        for (int arr : userNumbers) {
             System.out.print(arr + " ");
         }
     }
