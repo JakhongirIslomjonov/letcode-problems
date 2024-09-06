@@ -60,19 +60,23 @@ public class UEnter {
 
 //        extracted();
 
+        channel();
+
+    }
+
+    private static void channel() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("enter channel number :");
         int channelNumber = scanner.nextInt();
         if (channelNumber >= 1 && channelNumber <= 120) {
             System.out.println("channel number -> " + channelNumber);
         } else if (channelNumber < 1) {
-            channelNumber = -channelNumber % 120;
+            channelNumber =120 -channelNumber % 120;
             System.out.println("channel number -> " + channelNumber);
         } else {
             channelNumber = channelNumber % 120;
             System.out.println("channel number -> " + channelNumber);
         }
-
     }
 
     private static void extracted() {
