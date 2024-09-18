@@ -1,4 +1,4 @@
-package uz.pdp;
+package uz.pdp.uenter.basic;
 
 public class PrintDouble {
     Double aDouble;

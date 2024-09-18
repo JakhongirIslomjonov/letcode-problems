@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class CustomSchedule {
-    private Date customDate;
+    private Date customdate;
     private LocalDateTime departureTime;
-
 }

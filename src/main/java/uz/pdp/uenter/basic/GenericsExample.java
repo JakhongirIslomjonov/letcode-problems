@@ -1,4 +1,4 @@
-package uz.pdp;
+package uz.pdp.uenter.basic;
 
 import java.util.ArrayList;
 

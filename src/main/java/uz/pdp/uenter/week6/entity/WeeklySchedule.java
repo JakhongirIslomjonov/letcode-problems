@@ -4,5 +4,5 @@ import java.time.LocalDateTime;
 
 public class WeeklySchedule {
     private Integer dayOfWeek;
-    private LocalDateTime departureTime;
+    private LocalDateTime time;
 }

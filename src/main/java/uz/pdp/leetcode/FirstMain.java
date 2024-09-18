@@ -1,4 +1,4 @@
-package uz.pdp;
+package uz.pdp.leetcode;
 
 import java.util.Arrays;
 
@@ -10,6 +10,7 @@ public class FirstMain {
         System.out.println(interpret("G()(al)"));
         System.out.println(Arrays.toString(smallerNumbersThanCurrent(new int[]{8, 1, 2, 2, 3})));
         System.out.println(Arrays.toString(runningSum(new int[]{1, 2, 3, 4})));
+
     }
 
     //1863. Sum of All Subset XOR Totals

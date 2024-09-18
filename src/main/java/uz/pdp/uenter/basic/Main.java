@@ -1,4 +1,4 @@
-package uz.pdp;
+package uz.pdp.uenter.basic;
 
 public class    Main {
     public static void main(String[] args) {

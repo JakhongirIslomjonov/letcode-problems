@@ -1,6 +1,5 @@
-package uz.pdp;
+package uz.pdp.leetcode;
 
-import java.util.Calendar;
 import java.util.Scanner;
 
 public class Exam {
@@ -11,6 +10,10 @@ public class Exam {
         /* searchCharacterCount();*/
         /*  isUpperAndLoverCaseCheck();*/
 
+        //  seeThing();
+    }
+
+    private static void seeThing() {
         Scanner scanner = new Scanner(System.in);
         int[] arr = new int[10];
         int smInt = 0;
