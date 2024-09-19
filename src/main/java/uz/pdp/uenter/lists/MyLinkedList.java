@@ -51,6 +51,14 @@ public class MyLinkedList<T> {
             previous.next=current.next;
         }
     }
+    class Node<T> {
+        T data ;
+        Node<T> next;
+        Node(T data){
+            this.data=data;
+            this.next=null;
+        }
+    }
     public static void main(String[] args) {
         MyLinkedList<Integer> intList = new MyLinkedList<>();
         intList.add(1);
@@ -67,13 +75,5 @@ public class MyLinkedList<T> {
         intList.remove(1);
         System.out.println("After removing 1:");
         intList.display();
-    }
-    class Node<T> {
-        T data ;
-        Node<T> next;
-        Node(T data){
-            this.data=data;
-            this.next=null;
-        }
     }
 }
