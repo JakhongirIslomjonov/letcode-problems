@@ -10,6 +10,19 @@ public class FirstMain {
         System.out.println(interpret("G()(al)"));
         System.out.println(Arrays.toString(smallerNumbersThanCurrent(new int[]{8, 1, 2, 2, 3})));
         System.out.println(Arrays.toString(runningSum(new int[]{1, 2, 3, 4})));
+        System.out.println(removeElement(new int[]{3, 2, 2, 3}, 3));
+    }
+
+    public static int removeElement(int[] nums, int val) {
+        int i = 0;
+        for (int n = 0; n < nums.length; n++) {
+            if (nums[n] != val) {
+                nums[i] = nums[n];
+                i++;
+            }
+        }
+
+        return i;
 
     }
 
