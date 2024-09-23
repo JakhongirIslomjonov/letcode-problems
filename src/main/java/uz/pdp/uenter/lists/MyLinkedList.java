@@ -7,6 +7,7 @@ public class MyLinkedList<T> {
         this.head = null;
     }
 
+
     void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -53,12 +54,6 @@ public class MyLinkedList<T> {
     }
 
 
-    void getDelete(T data){
-        if (head==null){
-            return;
-        }
-        if ()
-    }
 
 
 
