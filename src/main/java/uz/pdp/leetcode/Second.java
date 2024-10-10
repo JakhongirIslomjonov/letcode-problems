@@ -4,7 +4,40 @@ import javax.swing.tree.TreeNode;
 
 public class Second {
     public static void main(String[] args) {
-        System.out.println(searchInsert(new int[]{1, 2, 3, 4, 5, 6}, 2));
+        /* System.out.println(searchInsert(new int[]{1, 2, 3, 4, 5, 6}, 2));
+         */
+//        System.out.println(findMaxConsecutiveOnes(new int[]{1, 1, 0, 1, 1, 1}));
+        System.out.println(findNumbers(new int[]{555, 901, 482, 1771}));
+    }
+
+    public static int findNumbers(int[] nums) {
+
+        int sum = 0;
+        for (int num : nums) {
+            int count = 0;
+            while (num != 0) {
+                num = num / 10;
+                count++;
+            }
+            if (count % 2 == 0) {
+                sum++;
+            }
+        }
+        return sum;
+    }
+
+    public static int findMaxConsecutiveOnes(int[] nums) {
+        int max = 0;
+        int counter = 0;
+        for (int num : nums) {
+            if (num == 1) counter++;
+            else
+                counter = 0;
+            if (max < counter) max = counter;
+
+        }
+
+        return max;
     }
 
     public static int searchInsert(int[] nums, int target) {
@@ -51,14 +84,5 @@ public class Second {
         return false;
     }
 
-    public static int rangeSumBST(TreeNode root, int low, int high) {
-        if (root == null) return 0;
-        int sum = 0;
-        sum += (root.val >= low && root.val <= high) ? root.val : 0;
-        rangeSumBST(root.left, low, high);
-        rangeSumBST(root.right, low,high);
-    }
-    int rangeSumBST(TreeNode  root, int low, int hight){
-      e
-    }
+
 }
