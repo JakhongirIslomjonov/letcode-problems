@@ -1,13 +1,30 @@
 package uz.pdp.leetcode;
 
 import javax.swing.tree.TreeNode;
+import java.util.Arrays;
 
 public class Second {
     public static void main(String[] args) {
         /* System.out.println(searchInsert(new int[]{1, 2, 3, 4, 5, 6}, 2));
          */
 //        System.out.println(findMaxConsecutiveOnes(new int[]{1, 1, 0, 1, 1, 1}));
-        System.out.println(findNumbers(new int[]{555, 901, 482, 1771}));
+        System.out.println(Arrays.toString(sortedSquares(new int[]{-7, -3, 2, 3, 11})));
+        // System.out.println(findNumbers(new int[]{555, 901, 482, 1771}));
+    }
+
+    public static int[] sortedSquares(int[] nums) {
+        int k = nums.length - 1;
+        int[] arr = new int[nums.length];
+        for (int i = 0, j = nums.length - 1; i <= j; ) {
+            if ((nums[i] * nums[i]) < (nums[j] * nums[j])) {
+                arr[k--] = nums[j] * nums[j];
+                j--;
+            } else {
+                arr[k--] = nums[i] * nums[i];
+                i++;
+            }
+        }
+        return arr;
     }
 
     public static int findNumbers(int[] nums) {
